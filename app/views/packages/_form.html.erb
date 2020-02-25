@@ -1,0 +1,15 @@
+<%= error_messages_for(f.object) %>
+
+<table summary="package form fields">
+    <tr>
+        <th><%= f.label(:origin) %></th>
+        <td><%= f.text_field(:origin) %></td>
+    </tr>
+
+    <tr>
+        <%= f.label :images%>
+        <%= f.file_field :images, multiple: true%>
+    </tr>
+
+
+</table>

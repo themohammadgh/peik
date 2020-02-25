@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Peik</title>
+
+</head>
+
+<body>
+    <% @packages.each do |pkg| %>
+    origin
+    <%=pkg.origin+' images'%>
+    <%(0...pkg.images.count).each do |i|%>
+    <%=image_tag(pkg.images[i],style: 'width:10%; height:auto')%>
+    <%end%>
+
+    <% end %>
+    <%= yield %>
+</body>
+
+</html>

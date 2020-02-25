@@ -1,0 +1,17 @@
+<% @page_title = "New package" %>
+
+<%= link_to("<< Back to List", packages_path, :class => 'back-link') %>
+
+<div class="packages new">
+    <h2>Create package</h2>
+
+    <%= form_for(@package) do |f| %>
+
+    <%= render(:partial => 'form', :locals => {:f => f}) %>
+
+    <div class="form-buttons">
+        <%= f.submit("Create package") %>
+    </div>
+
+    <% end %>
+</div>

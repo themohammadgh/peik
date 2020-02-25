@@ -1,0 +1,12 @@
+<h2>delete</h2>
+<%= form_for(@user, :method => 'delete') do |f| %>
+
+<p>Are you sure you want to permanently delete this section?</p>
+
+<p class="reference-name"><%= f.object.email %></p>
+
+<div class="form-buttons">
+    <%= f.submit("Delete user") %>
+</div>
+
+<% end %>

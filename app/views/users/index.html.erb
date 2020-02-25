@@ -1,0 +1,52 @@
+<div class="users index">
+    <h2>users</h2>
+
+    <% if !flash[:notice].blank? %>
+    <div class="notice">ƒ
+        <%= flash[:notice] %>
+    </div>
+
+    <% end %>
+
+    <table class="listing" summary="User list">
+        <tr class="header">
+            <th>#</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>First</th>
+            <th>Last</th>
+            <th>Phone</th>
+            <th>Bio</th>
+            <th>Img</th>
+        </tr>
+        <% @users.each do |user| %>
+        <tr>
+            <td><%= user.id%></td>
+            <td><%= user.username %></td>
+            <td><%= user.email %></td>
+            <td><%= user.first_name %></td>
+            <td><%= user.last_name %></td>
+            <td><%= user.phone %></td>
+            <td><%= user.bio %></td>
+            <td><%=image_tag(user.image,style: 'width:50%')%></td>
+            <td class="actions">
+                <% if user_signed_in? %>
+                <li>
+                    <%= link_to('Edit registration', edit_user_registration_path) %>
+                </li>
+                <% else %>
+                <li>
+                    <%= link_to('Register', new_user_registration_path) %>
+                </li>
+                <% end %>
+                <%= %>
+                <%= link_to('Show', user_path(user), :class => 'action show') %>
+                <%= link_to('Edit', edit_user_path(user), :class => 'action edit') %>
+                <%= link_to('Delete', delete_user_path(user), :class => 'action delete') %>
+                <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+            </td>
+        </tr>
+        <% end %>
+        <%= link_to('New User', new_user_registration_path, :class => 'action new') %>
+    </table>
+</div>

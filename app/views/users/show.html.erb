@@ -1,0 +1,30 @@
+<div class="users show">
+    <h2>Show user</h2>
+    <%= cookies%>
+    <%=session%>
+    <%= params%>
+    <table summary="user detail view">
+        <tr>
+            <th>username</th>
+            <td><%= @user.username%></td>
+        </tr>
+        <tr>
+            <th>email</th>
+            <td><%= @user.email %></td>
+        </tr>
+        <tr>
+            <th>firstname</th>
+            <td><%= @user.first_name%></td>
+        </tr>
+        <tr>
+            <th>last_name</th>
+            <td><%= @user.last_name %></td>
+        </tr>
+        <tr>
+            <th>is_traveler</th>
+            <td><%= @user.is_traveler %></td>
+        </tr>
+
+    </table>
+
+</div>
